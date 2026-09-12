@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Independent Bahamas sexual-offence public-records index and community safety reporting project." />
+  <title>Bahamas Sexual Offence Public Records & Community Reports</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">BAHAMAS PUBLIC SAFETY INDEX</a>
+    <nav aria-label="Primary">
+      <a href="#directory">Named public records</a>
+      <a href="#community">Community reports</a>
+      <a href="#submit">Submit</a>
+      <a href="#standards">Standards</a>
+      <a href="#correction">Corrections</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">INDEPENDENT • NON-GOVERNMENTAL • BAHAMAS-WIDE</p>
+      <h1>Sexual Offence Public Records & Community Reports</h1>
+      <p class="lede">One place to organize sourced public records and surface community-reported sexual-safety signals across the islands of The Bahamas.</p>
+      <div class="warning">
+        <strong>Important:</strong> This is not the official Government of The Bahamas Sex Offender Register or Registry. The site clearly separates named, source-backed public records from unverified community reports.
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" href="#directory">Search named records</a>
+        <a class="button" href="#community">View community reports</a>
+        <a class="button" href="#submit">Submit information</a>
+      </div>
+    </section>
+
+    <section class="ad-slot" aria-label="Advertisement placeholder">
+      <span>ADVERTISEMENT SPACE • ADSENSE AFTER POLICY + LEGAL REVIEW</span>
+    </section>
+
+    <section class="section explainer-grid">
+      <article class="tier-card">
+        <span class="badge">1 • VERIFIED CONVICTION</span>
+        <h2>Named record</h2>
+        <p>Name and case information backed by a reliable public court, government, or established-news source reporting a conviction or guilty plea.</p>
+      </article>
+      <article class="tier-card">
+        <span class="badge">2 • PUBLICLY REPORTED CASE</span>
+        <h2>Named, exact status</h2>
+        <p>A source-backed charge or allegation may be indexed only with its exact procedural status and source. It is never described as a conviction unless that is what the record says.</p>
+      </article>
+      <article class="tier-card">
+        <span class="badge">3 • COMMUNITY REPORT</span>
+        <h2>Immediate safety signal</h2>
+        <p>Firsthand and secondhand reports can publish immediately as structured, unverified community signals without publicly identifying the accused or a victim.</p>
+      </article>
+    </section>
+
+    <section id="directory" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SOURCE-BACKED NAMED RECORDS</p>
+          <h2>Search named public records</h2>
+        </div>
+        <p id="resultCount" class="count">Loading…</p>
+      </div>
+      <div class="filters">
+        <label>Search name or alias
+          <input id="searchInput" type="search" placeholder="Search…" autocomplete="off" />
+        </label>
+        <label>Island
+          <select id="islandFilter">
+            <option value="">All islands</option>
+            <option>New Providence</option><option>Grand Bahama</option><option>Abaco</option><option>Andros</option><option>Eleuthera</option><option>Exuma</option><option>Long Island</option><option>Bimini</option><option>Berry Islands</option><option>Cat Island</option><option>San Salvador</option><option>Acklins</option><option>Crooked Island</option><option>Mayaguana</option><option>Inagua</option><option>Ragged Island</option>
+          </select>
+        </label>
+        <label>Settlement / city
+          <input id="settlementFilter" type="search" placeholder="Nassau, Freeport, Marsh Harbour…" autocomplete="off" />
+        </label>
+      </div>
+      <div id="records" class="records" aria-live="polite"></div>
+      <div id="emptyState" class="empty" hidden>
+        <h3>No named public records match your search.</h3>
+        <p>This index is incomplete. Absence from this site is not proof that a person has no criminal history.</p>
+      </div>
+    </section>
+
+    <section id="community" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">UNVERIFIED • COMMUNITY-SUBMITTED • IMMEDIATE</p>
+          <h2>Community safety reports</h2>
+        </div>
+        <p id="communityCount" class="count">Loading…</p>
+      </div>
+      <div class="warning">
+        These reports are <strong>not findings of guilt</strong> and are not government records. They are community-submitted safety signals. Accused names, victim identities, exact addresses and contact information are not displayed here.
+      </div>
+      <div class="filters">
+        <label>Island
+          <select id="communityIslandFilter">
+            <option value="">All islands</option>
+            <option>New Providence</option><option>Grand Bahama</option><option>Abaco</option><option>Andros</option><option>Eleuthera</option><option>Exuma</option><option>Long Island</option><option>Bimini</option><option>Berry Islands</option><option>Cat Island</option><option>San Salvador</option><option>Acklins</option><option>Crooked Island</option><option>Mayaguana</option><option>Inagua</option><option>Ragged Island</option>
+          </select>
+        </label>
+        <label>Report type
+          <select id="communityTypeFilter"><option value="">All</option><option value="firsthand">Firsthand</option><option value="secondhand">Secondhand</option></select>
+        </label>
+        <label>Alleged conduct
+          <select id="communityConductFilter"><option value="">All</option><option>Rape / forced intercourse</option><option>Sexual assault / unwanted touching</option><option>Child sexual abuse</option><option>Grooming / exploitation</option><option>Indecent exposure</option><option>Other sexual misconduct</option></select>
+        </label>
+      </div>
+      <div id="communityReports" class="records" aria-live="polite"></div>
+      <div id="communityEmpty" class="empty" hidden><h3>No community reports match these filters.</h3></div>
+    </section>
+
+    <section id="submit" class="section">
+      <p class="eyebrow">TWO WAYS TO CONTRIBUTE</p>
+      <h2>Submit information</h2>
+      <div class="submit-grid">
+        <div>
+          <h3>Community report</h3>
+          <p>This path is built for scale. A structured report can appear in the Community Reports section immediately. Do not enter a victim’s identity or the accused person’s name into this form.</p>
+          <form id="communityForm" class="form">
+            <div class="two-col">
+              <label>Island
+                <select name="island" required><option value="">Select</option><option>New Providence</option><option>Grand Bahama</option><option>Abaco</option><option>Andros</option><option>Eleuthera</option><option>Exuma</option><option>Long Island</option><option>Bimini</option><option>Berry Islands</option><option>Cat Island</option><option>San Salvador</option><option>Acklins</option><option>Crooked Island</option><option>Mayaguana</option><option>Inagua</option><option>Ragged Island</option></select>
+              </label>
+              <label>Settlement / city <input name="settlement" maxlength="120" placeholder="Nassau, Freeport…" /></label>
+            </div>
+            <label>Report type <select name="account_type" required><option value="">Select</option><option value="firsthand">Firsthand</option><option value="secondhand">Secondhand</option></select></label>
+            <label>Relationship of accused person to victim
+              <select name="relationship" required><option value="">Select</option><option>Family member</option><option>Partner / spouse</option><option>Friend / acquaintance</option><option>Teacher / coach / clergy / trusted adult</option><option>Employer / coworker</option><option>Stranger</option><option>Other / unknown</option></select>
+            </label>
+            <label>Alleged conduct
+              <select name="conduct" required><option value="">Select</option><option>Rape / forced intercourse</option><option>Sexual assault / unwanted touching</option><option>Child sexual abuse</option><option>Grooming / exploitation</option><option>Indecent exposure</option><option>Other sexual misconduct</option></select>
+            </label>
+            <div class="two-col">
+              <label>Approximate year / period <input name="period" maxlength="80" placeholder="2024, 2018–2022, ongoing…" /></label>
+              <label>Victim age group <select name="victim_age_group" required><option value="">Select</option><option>Child under 13</option><option>Teen 13–17</option><option>Adult 18+</option><option>Unknown / prefer not to say</option></select></label>
+            </div>
+            <label>Pattern <select name="repeat_pattern" required><option value="">Select</option><option value="single">One incident reported</option><option value="repeated">Repeated / ongoing abuse reported</option><option value="multiple">Multiple alleged victims reported</option><option value="unknown">Unknown</option></select></label>
+            <label class="check"><input name="certify" type="checkbox" required /> <span>I am submitting this in good faith. I understand this public community report is unverified and must not contain names, exact addresses, phone numbers, victim-identifying details or threats.</span></label>
+            <button class="button primary" type="submit">Publish community report</button>
+            <p id="communitySubmissionStatus" class="status" role="status"></p>
+          </form>
+        </div>
+
+        <div>
+          <h3>Send a named public source</h3>
+          <p>If The Tribune, Nassau Guardian, Bahamas Press, a court, government agency or another reliable public source names a person in a sexual-offence case, submit the source here for inclusion in the named index.</p>
+          <form id="sourceForm" class="form">
+            <label>Person named by source <input name="name" required maxlength="160" /></label>
+            <label>Public source URL <input name="source_url" type="url" required maxlength="1000" placeholder="https://…" /></label>
+            <label>What does the source report?
+              <select name="reported_status" required><option value="">Select</option><option value="convicted">Convicted / guilty plea</option><option value="charged">Charged / arraigned</option><option value="allegation">Publicly reported allegation</option><option value="appeal">Appeal / conviction status changed</option></select>
+            </label>
+            <label>Island <select name="island"><option value="">Unknown</option><option>New Providence</option><option>Grand Bahama</option><option>Abaco</option><option>Andros</option><option>Eleuthera</option><option>Exuma</option><option>Long Island</option><option>Bimini</option><option>Berry Islands</option><option>Cat Island</option><option>San Salvador</option><option>Acklins</option><option>Crooked Island</option><option>Mayaguana</option><option>Inagua</option><option>Ragged Island</option></select></label>
+            <button class="button primary" type="submit">Send source</button>
+            <p id="sourceStatus" class="status" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="standards" class="section legal-grid">
+      <div><p class="eyebrow">NAMED RECORD STANDARD</p><h2>Identity needs a source</h2><ul><li>Name and aliases where the source identifies the person.</li><li>Exact status: convicted, guilty plea, charged, acquitted, appeal/retrial, or other reported posture.</li><li>Offence, court, case reference, conviction/sentence details when published.</li><li>Island and settlement/city when supported by the source.</li><li>Public-source photos only when rights and identity are sufficiently clear.</li><li>Every named profile links back to its source.</li></ul></div>
+      <div><p class="eyebrow">COMMUNITY REPORT STANDARD</p><h2>Immediate but non-identifying</h2><ul><li>Firsthand or secondhand status displayed prominently.</li><li>Island, broad location, relationship, alleged conduct, timeframe and pattern.</li><li>No accused name/photo without a qualifying public source.</li><li>No victim name, exact address, phone number, ID, intimate image or other doxxing information.</li><li>No calls for retaliation or vigilantism.</li><li>Clearly labeled unverified and not a finding of guilt.</li></ul></div>
+    </section>
+
+    <section id="correction" class="section split">
+      <div><p class="eyebrow">ACCURACY MATTERS</p><h2>Request a correction or removal review</h2><p>If a named record is wrong, outdated, belongs to the wrong person, has been acquitted, overturned, expunged or otherwise legally restricted, send a correction request with supporting documentation.</p></div>
+      <form id="correctionForm" class="form"><label>Record/person name <input name="record_name" required maxlength="160" /></label><label>Your email <input name="email" type="email" required maxlength="240" /></label><label>What needs to be corrected? <textarea name="message" rows="5" required maxlength="4000"></textarea></label><label>Supporting source URL <input name="source_url" type="url" maxlength="1000" /></label><button class="button primary" type="submit">Send correction request</button><p id="correctionStatus" class="status" role="status"></p></form>
+    </section>
+
+    <section class="section legal">
+      <p class="eyebrow">LEGAL + SAFETY NOTICE</p>
+      <h2>Read before using this site</h2>
+      <p>This project is an independent public-information and community-safety project. It is not a law-enforcement agency, court, government registry, background-check service or substitute for official records.</p>
+      <p>The Bahamas Sexual Offences Act provides for a government Sex Offender Register and Registry. Public notification is governed separately by law and ministerial regulation. This site does not claim access to the government register and does not reproduce non-public registry data.</p>
+      <p>Bahamian data-protection law treats criminal convictions and the alleged commission of an offence as sensitive personal data. A disclaimer does not make unlawful publication lawful. Named publication therefore uses source-backed records and a correction process.</p>
+      <p><strong>Community reports:</strong> These are unverified safety signals, not findings of guilt. Do not use them to identify, accuse, threaten, stalk, harass or confront a person.</p>
+      <p><strong>Emergency:</strong> If someone is in immediate danger or a child is being abused, contact the Royal Bahamas Police Force or the appropriate Bahamian child-protection authority rather than relying on this website.</p>
+      <p class="small">Legal references: Sexual Offences Act, Ch. 99, ss. 26A–26J; Sexual Offences (Amendment) Act, 2014; Sexual Offences (Amendment) Act, 2014 (Appointed Day) Notice, 2019; Data Protection (Privacy of Personal Information) Act, Ch. 324A. Obtain Bahamian legal advice before launch and before enabling advertising.</p>
+    </section>
+  </main>
+  <footer><p>Independent Bahamas Public Safety Project • Not affiliated with the Government of The Bahamas.</p><p>Community reports are unverified. Named records are source-backed.</p></footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>

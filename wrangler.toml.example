@@ -1,0 +1,12 @@
+name = "bahamas-public-safety-index"
+compatibility_date = "2026-09-11"
+pages_build_output_dir = "."
+
+# Create a D1 database, then replace REPLACE_WITH_DATABASE_ID.
+[[d1_databases]]
+binding = "DB"
+database_name = "bahamas-public-safety-index"
+database_id = "REPLACE_WITH_DATABASE_ID"
+
+# MATCH_SECRET and REPORT_ENCRYPTION_KEY must be configured as encrypted
+# Cloudflare secrets. Never put their values in this file or in GitHub.

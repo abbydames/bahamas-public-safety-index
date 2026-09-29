@@ -4,12 +4,12 @@ Independent, non-governmental Bahamas-wide public-safety website prototype.
 
 ## Named public-record dataset
 
-The current prototype includes **69 named, source-backed public records** spanning modern news archives and a first historical court-record expansion reaching back to the 1980s.
+The current prototype includes **70 named, source-backed public records** spanning modern news archives and a first historical court-record expansion reaching back to the 1980s.
 
 Current status mix:
 
 - 37 conviction / guilty-plea records
-- 27 charge / arraignment records
+- 28 charge / arraignment records
 - 1 acquittal record
 - 4 appeal / status-change records where an earlier conviction was quashed or otherwise materially changed
 

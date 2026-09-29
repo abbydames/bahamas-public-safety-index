@@ -1,15 +1,15 @@
 # Initial launch dataset
 
-As of September 11, 2026, the prototype includes **69 named, source-backed public records**:
+As of September 29, 2026, the prototype includes **70 named, source-backed public records**:
 
 - **37 conviction / guilty-plea records**
-- **27 charge / arraignment records** where no conviction is asserted in the current entry
+- **28 charge / arraignment records** where no conviction is asserted in the current entry
 - **1 acquittal record** retained specifically so the earlier accusation is not presented without its later not-guilty outcome
 - **4 appeal / status-change records** where an earlier sexual-offence conviction was quashed, altered, or otherwise requires the appellate outcome to be shown prominently
 
 The named directory is based on publicly accessible Bahamian court, appellate, police, established-news and other reliable archival reporting. Community submissions are separate and are not promoted into the named directory merely because a user submitted an accusation.
 
-The first research pass was weighted toward modern digital news and therefore materially undercounted historical cases. A second pass now reaches back into the **1980s and 1990s**, including records from 1984, 1988, 1991, 1994, 1995, 1996 and offences committed in 1999. Historical court archives remain incomplete and difficult to search, so 69 should not be interpreted as an exhaustive total. Additional 1980s Court of Appeal records are being evaluated where the accessible public excerpt confirms an original conviction but does not yet expose enough of the judgment to establish the final appellate disposition.
+The first research pass was weighted toward modern digital news and therefore materially undercounted historical cases. A second pass now reaches back into the **1980s and 1990s**, including records from 1984, 1988, 1991, 1994, 1995, 1996 and offences committed in 1999. Historical court archives remain incomplete and difficult to search, so 70 should not be interpreted as an exhaustive total. Additional 1980s Court of Appeal records are being evaluated where the accessible public excerpt confirms an original conviction but does not yet expose enough of the judgment to establish the final appellate disposition.
 
 For non-conviction records, the interface must use the exact procedural label, such as **PUBLICLY REPORTED CHARGE — NOT A CONVICTION**. If a later acquittal, dismissal, withdrawal, conviction, appeal, retrial, quashing, or other disposition is located, the record should be updated rather than leaving the earlier procedural status standing alone.
 

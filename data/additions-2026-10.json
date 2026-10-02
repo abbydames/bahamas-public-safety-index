@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-10-02",
+  "scope_note": "Source-backed additions to the named public-record directory after the initial September 2026 research pass.",
+  "records": [
+    {
+      "name": "Jayvon Forbes",
+      "aliases": "Javon Forbes",
+      "island": "New Providence",
+      "settlement": "Ross Corner, Nassau",
+      "offence": "Rape, murder and burglary (guilty plea)",
+      "court": "Supreme Court of The Bahamas",
+      "case_ref": null,
+      "conviction_date": "2026-03-09",
+      "sentence": "39 years for murder, 25 years for rape and 20 years for burglary, all concurrent.",
+      "source_name": "Our News; sentencing subsequently reported by The Nassau Guardian",
+      "source_url": "https://ournews.bs/man-admits-to-raping-and-killing-72-year-old-woman-in-november-2024/",
+      "source_date": "2026-10-02",
+      "photo_url": null,
+      "record_type": "conviction",
+      "status_note": "Forbes pleaded guilty to the November 23, 2024 rape and murder of 72-year-old Vernanchia Butler and to burglary. Our News reported the guilty plea in March 2026 using the spelling Jayvon Forbes. The Nassau Guardian later reported the sentencing using the spelling Javon Forbes: 39 years for murder, 25 years for rape and 20 years for burglary, to run concurrently. Justice Renae McKay imposed the sentences.",
+      "publication_status": "published",
+      "last_verified_at": "2026-10-02"
+    }
+  ]
+}

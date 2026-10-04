@@ -1,6 +1,7 @@
 const state={records:[],community:[]};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+const norm=s=>String(s??'').normalize('NFKD').toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
 
 function recordLabel(r){
   if(r.record_type==='conviction')return'SOURCE-BACKED CONVICTION / GUILTY PLEA';
@@ -11,6 +12,19 @@ function recordLabel(r){
   if(r.record_type==='withdrawn')return'CHARGE WITHDRAWN';
   if(r.record_type==='appeal')return'APPEAL / STATUS CHANGE';
   return'SOURCE-BACKED PUBLIC RECORD';
+}
+
+function missingPhotoMarkup(){return ''}
+function photoMarkup(r){
+  if(!r.photo_url)return missingPhotoMarkup();
+  const credit=r.photo_source_name?`<div class="photo-credit" style="margin:0 0 2px;color:#686868;font-size:.66rem;line-height:1.35;overflow-wrap:anywhere">Photo: ${r.photo_source_url?`<a href="${esc(r.photo_source_url)}" target="_blank" rel="noopener noreferrer">${esc(r.photo_source_name)}</a>`:esc(r.photo_source_name)}</div>`:'';
+  return `<div class="record-photo-wrap"><img class="record-photo" src="${esc(r.photo_url)}" alt="Public-source image for ${esc(r.name)}" loading="lazy" referrerpolicy="no-referrer">${credit}</div>`;
+}
+function bindPhotoFallbacks(){
+  document.querySelectorAll('.record-photo').forEach(img=>img.addEventListener('error',()=>{
+    const wrap=img.closest('.record-photo-wrap');
+    if(wrap)wrap.outerHTML=missingPhotoMarkup();
+  },{once:true}));
 }
 
 function renderRecords(){
@@ -24,7 +38,8 @@ function renderRecords(){
   });
   $('#resultCount').textContent=`${rows.length} named record${rows.length===1?'':'s'}`;
   $('#emptyState').hidden=rows.length>0;
-  $('#records').innerHTML=rows.map(r=>`<article class="record-card">${r.photo_url?`<img class="record-photo" src="${esc(r.photo_url)}" alt="Public-source image for ${esc(r.name)}" loading="lazy" referrerpolicy="no-referrer">`:''}<span class="badge">${esc(recordLabel(r))}</span><h3>${esc(r.name)}</h3>${r.aliases?`<div class="record-meta"><strong>Aliases:</strong> ${esc(r.aliases)}</div>`:''}<div class="record-meta">${r.settlement||r.island?`<span><strong>Location:</strong> ${esc([r.settlement,r.island].filter(Boolean).join(', '))}</span>`:''}${r.offence?`<span><strong>Reported offence:</strong> ${esc(r.offence)}</span>`:''}${r.court?`<span><strong>Court:</strong> ${esc(r.court)}</span>`:''}${r.conviction_date?`<span><strong>Conviction / plea date:</strong> ${esc(r.conviction_date)}</span>`:''}${r.sentence?`<span><strong>Sentence / disposition:</strong> ${esc(r.sentence)}</span>`:''}${r.case_ref?`<span><strong>Case reference:</strong> ${esc(r.case_ref)}</span>`:''}${r.status_note?`<span><strong>Status note:</strong> ${esc(r.status_note)}</span>`:''}</div><div class="record-source"><strong>Source:</strong> ${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">${esc(r.source_name||'View public source')}</a>`:esc(r.source_name||'Public source')}<br><strong>Source checked:</strong> ${esc(r.last_verified_at||'')}</div></article>`).join('');
+  $('#records').innerHTML=rows.map(r=>`<article class="record-card">${photoMarkup(r)}<span class="badge">${esc(recordLabel(r))}</span><h3>${esc(r.name)}</h3>${r.aliases?`<div class="record-meta"><strong>Aliases:</strong> ${esc(r.aliases)}</div>`:''}<div class="record-meta">${r.settlement||r.island?`<span><strong>Location:</strong> ${esc([r.settlement,r.island].filter(Boolean).join(', '))}</span>`:''}${r.offence?`<span><strong>Reported offence:</strong> ${esc(r.offence)}</span>`:''}${r.court?`<span><strong>Court:</strong> ${esc(r.court)}</span>`:''}${r.conviction_date?`<span><strong>Conviction / plea date:</strong> ${esc(r.conviction_date)}</span>`:''}${r.sentence?`<span><strong>Sentence / disposition:</strong> ${esc(r.sentence)}</span>`:''}${r.case_ref?`<span><strong>Case reference:</strong> ${esc(r.case_ref)}</span>`:''}${r.status_note?`<span><strong>Status note:</strong> ${esc(r.status_note)}</span>`:''}</div><div class="record-source"><strong>Source:</strong> ${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">${esc(r.source_name||'View public source')}</a>`:esc(r.source_name||'Public source')}<br><strong>Source checked:</strong> ${esc(r.last_verified_at||'')}</div></article>`).join('');
+  bindPhotoFallbacks();
 }
 
 function renderCommunity(){
@@ -63,12 +78,49 @@ function enhanceNavigation(){
 }
 
 async function loadJsonRecords(url){try{const res=await fetch(url,{headers:{Accept:'application/json'}});if(!res.ok)throw new Error('unavailable');const data=await res.json();return Array.isArray(data.records)?data.records:[]}catch(e){return[]}}
-function mergeRecords(...sets){const out=[],seen=new Set();for(const set of sets){for(const r of Array.isArray(set)?set:[]){const key=`${String(r.name||'').toLowerCase()}|${String(r.record_type||'').toLowerCase()}|${String(r.source_url||'').toLowerCase()}`;if(!seen.has(key)){seen.add(key);out.push(r)}}}return out}
+async function loadPhotoData(){try{const res=await fetch('./data/photo-map.json',{headers:{Accept:'application/json'}});if(!res.ok)throw new Error('unavailable');const data=await res.json();return Array.isArray(data.photos)?data.photos:[]}catch(e){return[]}}
+function mergeRecords(...sets){const out=[],seen=new Set();for(const set of sets){for(const r of Array.isArray(set)?set:[]){const key=`${norm(r.name)}|${norm(r.record_type)}|${norm(r.source_url)}`;if(!seen.has(key)){seen.add(key);out.push(r)}}}return out}
+
+async function hydratePhotos(photos){
+  const hydrated=[];
+  for(const p of photos){
+    const item={...p};
+    if(item.base64_file){
+      try{const res=await fetch(item.base64_file);if(res.ok){const b64=(await res.text()).replace(/\s+/g,'');item.resolved_url=`data:${item.media_type||'image/webp'};base64,${b64}`}}catch(e){}
+    }else if(item.url)item.resolved_url=item.url;
+    hydrated.push(item);
+  }
+  return hydrated;
+}
+function applyPhotos(records,photos){
+  const index=new Map();
+  for(const p of photos){
+    for(const name of [p.name,...(Array.isArray(p.aliases)?p.aliases:[])])if(name)index.set(norm(name),p);
+  }
+  for(const r of records){
+    const names=[r.name,...String(r.aliases||'').split(';')].map(norm).filter(Boolean);
+    const p=names.map(n=>index.get(n)).find(Boolean);
+    if(!p)continue;
+    if(p.resolved_url)r.photo_url=p.resolved_url;
+    r.photo_source_name=p.source_name||null;
+    r.photo_source_url=p.source_url||null;
+  }
+  return records;
+}
+
 async function loadRecords(){
   let api=[];
   try{const res=await fetch('./api/records',{headers:{Accept:'application/json'}});if(res.ok){const data=await res.json();api=Array.isArray(data.records)?data.records:[]}}catch(e){}
-  const [convictions,reported,historical,additions]=await Promise.all([loadJsonRecords('./data/seed-records.json'),loadJsonRecords('./data/publicly-reported-cases.json'),loadJsonRecords('./data/historical-records.json'),loadJsonRecords('./data/additions-2026-10.json')]);
-  state.records=mergeRecords(api,convictions,reported,historical,additions);
+  const [convictions,reported,historical,additions,liveAdditions,photoData]=await Promise.all([
+    loadJsonRecords('./data/seed-records.json'),
+    loadJsonRecords('./data/publicly-reported-cases.json'),
+    loadJsonRecords('./data/historical-records.json'),
+    loadJsonRecords('./data/additions-2026-10.json'),
+    loadJsonRecords('./data/live-additions-2026-10.json'),
+    loadPhotoData()
+  ]);
+  const photos=await hydratePhotos(photoData);
+  state.records=applyPhotos(mergeRecords(api,convictions,reported,historical,additions,liveAdditions),photos);
   renderRecords();
 }
 async function loadCommunity(){try{const res=await fetch('./api/community-reports',{headers:{Accept:'application/json'}});if(!res.ok)throw new Error('not deployed');const data=await res.json();state.community=Array.isArray(data.reports)?data.reports:[]}catch(e){state.community=[]}renderCommunity()}

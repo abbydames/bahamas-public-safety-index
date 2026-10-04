@@ -67,8 +67,8 @@ function mergeRecords(...sets){const out=[],seen=new Set();for(const set of sets
 async function loadRecords(){
   let api=[];
   try{const res=await fetch('./api/records',{headers:{Accept:'application/json'}});if(res.ok){const data=await res.json();api=Array.isArray(data.records)?data.records:[]}}catch(e){}
-  const [convictions,reported,historical]=await Promise.all([loadJsonRecords('./data/seed-records.json'),loadJsonRecords('./data/publicly-reported-cases.json'),loadJsonRecords('./data/historical-records.json')]);
-  state.records=mergeRecords(api,convictions,reported,historical);
+  const [convictions,reported,historical,additions]=await Promise.all([loadJsonRecords('./data/seed-records.json'),loadJsonRecords('./data/publicly-reported-cases.json'),loadJsonRecords('./data/historical-records.json'),loadJsonRecords('./data/additions-2026-10.json')]);
+  state.records=mergeRecords(api,convictions,reported,historical,additions);
   renderRecords();
 }
 async function loadCommunity(){try{const res=await fetch('./api/community-reports',{headers:{Accept:'application/json'}});if(!res.ok)throw new Error('not deployed');const data=await res.json();state.community=Array.isArray(data.reports)?data.reports:[]}catch(e){state.community=[]}renderCommunity()}

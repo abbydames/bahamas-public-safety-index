@@ -4,13 +4,13 @@ Independent, non-governmental Bahamas-wide public-safety website prototype.
 
 ## Named public-record dataset
 
-The current prototype includes **70 named, source-backed public records** spanning modern news archives and a first historical court-record expansion reaching back to the 1980s.
+The current prototype includes **75 named, source-backed public records** spanning modern news archives and a first historical court-record expansion reaching back to the 1980s.
 
 Current status mix:
 
-- 37 conviction / guilty-plea records
-- 28 charge / arraignment records
-- 1 acquittal record
+- 39 conviction / guilty-plea records
+- 30 charge / arraignment records
+- 2 acquittal records
 - 4 appeal / status-change records where an earlier conviction was quashed or otherwise materially changed
 
 This number is not exhaustive. Older Bahamian records are much less consistently digitized, and some reporting withholds accused names to protect victims. Every named entry should preserve the exact public procedural status rather than treating accusation, charge, conviction, acquittal, dismissal and appellate reversal as equivalent.
@@ -24,6 +24,10 @@ The site separates three kinds of information:
 3. **Community reports** — immediate unverified safety signals. The reporter supplies the accused person's identity privately. The identity is AES-256-GCM encrypted and never returned by the public community-report API. A keyed HMAC clusters repeat reports concerning the same submitted identity.
 
 Public community cards can therefore say that multiple reports are linked to the same privately identified person without displaying that person's name from an unverified accusation.
+
+## Photo standard
+
+Named records display identification photos when a photo can be tied to the named person through a public source or a supplied public-news image. Ambiguous thumbnails, generic court graphics and unverified lookalikes are not used. A missing photo means no sufficiently verified public image has been added yet, not that one does not exist.
 
 ## Cloudflare setup
 
@@ -92,7 +96,8 @@ Recommended MVP placement:
 - [ ] Turnstile enabled
 - [ ] Cloudflare rate limiting enabled
 - [ ] correction/takedown workflow has a monitored inbox or dashboard
-- [ ] named records have source URL + exact legal/procedural status
-- [ ] later public dispositions are reflected prominently
-- [ ] no victim/minor identifying information in public content
+- [x] named records have source URL + exact legal/procedural status
+- [x] later public dispositions located in this research pass are reflected prominently
+- [x] audited photos are shown only when tied to the named person with sufficient confidence
+- [x] no victim/minor identifying information intentionally included in public record summaries
 - [ ] AdSense approved before ad code is enabled

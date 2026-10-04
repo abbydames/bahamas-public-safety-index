@@ -14,11 +14,11 @@ function recordLabel(r){
   return'SOURCE-BACKED PUBLIC RECORD';
 }
 
-function missingPhotoMarkup(){return '<div class="record-photo-missing" aria-label="No verified public photo located"><span>NO VERIFIED PUBLIC PHOTO LOCATED</span></div>'}
+function missingPhotoMarkup(){return ''}
 function photoMarkup(r){
   if(!r.photo_url)return missingPhotoMarkup();
-  const credit=r.photo_source_name?`<figcaption class="photo-credit">Photo: ${r.photo_source_url?`<a href="${esc(r.photo_source_url)}" target="_blank" rel="noopener noreferrer">${esc(r.photo_source_name)}</a>`:esc(r.photo_source_name)}</figcaption>`:'';
-  return `<figure class="record-photo-wrap"><img class="record-photo" src="${esc(r.photo_url)}" alt="Public-source image for ${esc(r.name)}" loading="lazy" referrerpolicy="no-referrer">${credit}</figure>`;
+  const credit=r.photo_source_name?`<div class="photo-credit" style="margin:0 0 2px;color:#686868;font-size:.66rem;line-height:1.35;overflow-wrap:anywhere">Photo: ${r.photo_source_url?`<a href="${esc(r.photo_source_url)}" target="_blank" rel="noopener noreferrer">${esc(r.photo_source_name)}</a>`:esc(r.photo_source_name)}</div>`:'';
+  return `<div class="record-photo-wrap"><img class="record-photo" src="${esc(r.photo_url)}" alt="Public-source image for ${esc(r.name)}" loading="lazy" referrerpolicy="no-referrer">${credit}</div>`;
 }
 function bindPhotoFallbacks(){
   document.querySelectorAll('.record-photo').forEach(img=>img.addEventListener('error',()=>{

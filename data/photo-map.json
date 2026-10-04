@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-10-03",
+  "scope_note": "Photos are included only when the image is tied to the named person by a supplied public-news screenshot, a source-specific filename/caption, or an exact named-person article with sufficiently clear provenance. Generic court graphics and ambiguous thumbnails are excluded.",
+  "photos": [
+    {
+      "name": "Jayvon Forbes",
+      "aliases": ["Javon Forbes"],
+      "base64_file": "./assets/photos/forbes.webp.b64",
+      "media_type": "image/webp",
+      "source_name": "User-provided Nassau Guardian public-news screenshot",
+      "source_url": null
+    },
+    {
+      "name": "Cheguvera Moxey",
+      "aliases": [],
+      "base64_file": "./assets/photos/cheguvera-moxey.webp.b64",
+      "media_type": "image/webp",
+      "source_name": "User-provided public-news screenshot",
+      "source_url": null
+    },
+    {
+      "name": "Oswald Samuel Poitier III",
+      "aliases": ["Oswald Poitier III", "Oswald Poitier Jr", "Oswald Poitier"],
+      "url": "https://www.bahamaspress.com/wp-content/uploads/2022/01/Oswald-Poitier.jpg",
+      "source_name": "Bahamas Press",
+      "source_url": "https://www.bahamaspress.com/young-rapist-caught-selling-drugs-in-jail/"
+    },
+    {
+      "name": "Lincoln Poitier",
+      "aliases": [],
+      "url": "https://www.bahamaspress.com/wp-content/uploads/2024/05/Poitier.jpg",
+      "source_name": "Bahamas Press",
+      "source_url": "https://www.bahamaspress.com/man-set-to-serve-three-decades-in-prison-for-rape-and-kidnapping-of-teen-girl/"
+    },
+    {
+      "name": "Divon D’emon Seymour",
+      "aliases": ["D'emon Seymour", "Divon D'emon Seymour"],
+      "url": "https://www.bahamaspress.com/wp-content/uploads/2024/03/image-32.png",
+      "source_name": "Bahamas Press",
+      "source_url": "https://www.bahamaspress.com/serial-rapist-strikes-plea-deal-to-three-rapes-assault-and-armed-robberies-gets-10-years/"
+    },
+    {
+      "name": "Andre Birbal",
+      "aliases": [],
+      "url": "https://www.bahamaspress.com/wp-content/uploads/2014/05/Birbal2tony.jpg",
+      "source_name": "Bahamas Press",
+      "source_url": "https://www.bahamaspress.com/convicted-pedophile-educator-andre-birbal-has-been-granted-a-third-trial/"
+    },
+    {
+      "name": "Gerald Mark Forbes",
+      "aliases": ["Gerald Forbes"],
+      "url": "https://bahamascourtnews.com/wp-content/uploads/2023/03/img_0425.jpg",
+      "source_name": "Bahamas Court News",
+      "source_url": "https://bahamascourtnews.com/doctor-gets-12-years-for-rape/"
+    }
+  ]
+}

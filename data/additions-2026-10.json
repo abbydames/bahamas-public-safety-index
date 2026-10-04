@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02",
-  "scope_note": "Source-backed additions to the named public-record directory after the initial September 2026 research pass.",
+  "generated_at": "2026-10-03",
+  "scope_note": "Source-backed additions to the named public-record directory after the initial September 2026 research pass. Separate records are retained when the same person has distinct public cases or later dispositions. Non-conviction records preserve the exact procedural status and do not imply guilt.",
   "records": [
     {
       "name": "Jayvon Forbes",
@@ -19,7 +19,83 @@
       "record_type": "conviction",
       "status_note": "Forbes pleaded guilty to the November 23, 2024 rape and murder of 72-year-old Vernanchia Butler and to burglary. Our News reported the guilty plea in March 2026 using the spelling Jayvon Forbes. The Nassau Guardian later reported the sentencing using the spelling Javon Forbes: 39 years for murder, 25 years for rape and 20 years for burglary, to run concurrently. Justice Renae McKay imposed the sentences.",
       "publication_status": "published",
-      "last_verified_at": "2026-10-02"
+      "last_verified_at": "2026-10-03"
+    },
+    {
+      "name": "Oswald Samuel Poitier III",
+      "aliases": "Oswald Poitier III; Oswald Poitier Jr; Oswald Poitier",
+      "island": "New Providence",
+      "settlement": null,
+      "offence": "Rape charge",
+      "court": "Magistrate's Court",
+      "case_ref": null,
+      "conviction_date": null,
+      "sentence": "Remanded pending transfer to the Supreme Court.",
+      "source_name": "The Tribune",
+      "source_url": "https://www.tribune242.com/news/2017/apr/04/two-accused-separate-sex-attacks/",
+      "source_date": "2017-04-04",
+      "photo_url": "https://www.bahamaspress.com/wp-content/uploads/2022/01/Oswald-Poitier.jpg",
+      "record_type": "charged",
+      "status_note": "At age 20, Oswald Poitier III was arraigned in April 2017 on a rape charge concerning an alleged March 27-28, 2017 incident involving a 24-year-old woman. The source reported that the matter was to be transferred to the Supreme Court. No later disposition for this specific 2017 charge was located in this update.",
+      "publication_status": "published",
+      "last_verified_at": "2026-10-03"
+    },
+    {
+      "name": "Oswald Samuel Poitier III",
+      "aliases": "Oswald Poitier III; Oswald Samuel Poitier",
+      "island": "New Providence",
+      "settlement": null,
+      "offence": "Rape (guilty plea)",
+      "court": "Supreme Court of The Bahamas",
+      "case_ref": null,
+      "conviction_date": "2020",
+      "sentence": "10 years imprisonment.",
+      "source_name": "Bahamas Press",
+      "source_url": "https://www.bahamaspress.com/young-rapist-caught-selling-drugs-in-jail/",
+      "source_date": "2022-01-20",
+      "photo_url": "https://www.bahamaspress.com/wp-content/uploads/2022/01/Oswald-Poitier.jpg",
+      "record_type": "conviction",
+      "status_note": "Bahamas Press reported that Poitier took a plea deal in 2020 in a rape case arising from a May 23, 2018 incident and was serving a 10-year sentence when separately arraigned on a prison drug charge in January 2022.",
+      "publication_status": "published",
+      "last_verified_at": "2026-10-03"
+    },
+    {
+      "name": "Oswald Samuel Poitier III",
+      "aliases": "Oswald Poitier III; Oswald Poitier Jr; Oswald Poitier",
+      "island": "New Providence / Andros",
+      "settlement": "East Street South area, New Providence",
+      "offence": "Rape charge involving a 17-year-old girl",
+      "court": "Magistrate's Court",
+      "case_ref": null,
+      "conviction_date": null,
+      "sentence": "Remanded; bail denied. Voluntary bill of indictment papers scheduled for December 10, 2026.",
+      "source_name": "Our News; The Tribune",
+      "source_url": "https://ournews.bs/andros-dj-is-behind-bars-accused-of-raping-17-year-old-girl/",
+      "source_date": "2026-09-30",
+      "photo_url": "https://www.bahamaspress.com/wp-content/uploads/2022/01/Oswald-Poitier.jpg",
+      "record_type": "charged",
+      "status_note": "A 30-year-old DJ and Andros resident was charged over an alleged September 25, 2026 rape of a 17-year-old girl in New Providence. Bail was denied and he was remanded. Our News identifies the accused as Oswald Poitier III on its current site listing, while The Tribune reports the name as Oswald Poitier Jr. This is a pending charge and is not a conviction.",
+      "publication_status": "published",
+      "last_verified_at": "2026-10-03"
+    },
+    {
+      "name": "Gary Talbot Cooper",
+      "aliases": null,
+      "island": "New Providence",
+      "settlement": null,
+      "offence": "Two separate sexual-offence allegations; acquitted in both matters",
+      "court": "Supreme Court of The Bahamas",
+      "case_ref": null,
+      "conviction_date": null,
+      "sentence": "ACQUITTED / NOT CONVICTED. Most recent jury verdict: not guilty, 7-2, September 11, 2026.",
+      "source_name": "The Nassau Guardian; Our News",
+      "source_url": "https://www.thenassauguardian.com/news/jury-acquits-man-accused-of-tricking-girl-into-sex-during-food-game/article_7ff48deb-dc79-48bd-abfe-230d506c7b20.html",
+      "source_date": "2026-09-14",
+      "photo_url": null,
+      "record_type": "acquitted",
+      "status_note": "ACQUITTED / NOT CONVICTED. In September 2026, a jury acquitted Cooper by a 7-2 vote after a woman alleged that he deceived her into a sexual act while she was blindfolded during what she believed was preparation for a food-tasting competition. The Nassau Guardian reported this was the second time he had been cleared in a sexual-offence case. In 2022, a jury also acquitted him of allegations that he sexually assaulted the 14-year-old daughter of a family friend in 2018; blindfolding was also alleged in that case. Both matters ended in acquittal, and this record must not be read as a finding of guilt.",
+      "publication_status": "published",
+      "last_verified_at": "2026-10-03"
     }
   ]
 }
